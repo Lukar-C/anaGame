@@ -24,6 +24,7 @@ div {
     position: absolute;
     flex-direction: column;
     flex-wrap: wrap;
+    flex-flow: column;
     align-items: 2;
 
     width: 500px;
@@ -37,44 +38,152 @@ div {
 
 h1 {
     display: initial;
-    position: relative;
-    float: left;
 
     width: 245px;
     height: 218px;
     margin-bottom: 38px;
+
+    color: #000;
 
     font-weight: 600;
     font-size: 48px;
     line-height: 56px;
 }
 
+img {
+    position: absolute;
+    left: calc(13px + 210px);
+
+    width: 258px;
+    height: 258px;
+    float: right;
+}
+
+/* image 1
+
+position: absolute;
+width: 258px;
+height: 258px;
+left: 954px;
+top: 196px;
+
+background: url(image.png);
+transform: matrix(-1, 0, 0, 1, 0, 0); */
+
+
 #hColor1 {
-    display: initial;
+    display: inline;
+
+    color: #FFB431;
 
     font-size: 48px;
     line-height: 56px;
-
-    color: #FFB431;
-}
-
-svg {
-    position: relative;
 }
 
 p {
     display: block;
 
+    width: auto;
+    height: 21px;
+
+    color: #000;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+
+#pColor1 {
+    display: inline;
+
+    height: 21px;
+
+    color: #FFB431;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+input {
+    display: block;
+
+    width: 55px;
+    height: 50px;
+    margin: 35px 0 0 50%;
+    border: 2px solid #DE5540;
+    border-radius: 5px;
+    transform: translateX(-50%);
+
+    background: #fff;
+
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#mensageResult {
+    position: relative;
+    margin-top: -22.5px;
 }
 
 button {
 
     width: 161px;
     height: 35px;
+    top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
 
     color: #fff;
     background-color: #DE5540;
-    border-radius: 5px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
+#textButton {
+    color: #fff;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#numberCount {
+    height: 21px;
+    margin: 37.5px 0 0 50%;
+    transform: translateX(-50%);
+
+    color: #000;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+#pColor2 {
+    display: inline;
+
+    height: 21px;
+
+    color: #FFB431;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.hidden {
+    opacity: 0;
+}
 
