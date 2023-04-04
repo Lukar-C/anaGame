@@ -71,18 +71,6 @@ h1 {
     transition: 0.2s;
 }
 
-/* image 1
-
-position: absolute;
-width: 258px;
-height: 258px;
-left: 954px;
-top: 196px;
-
-background: url(image.png);
-transform: matrix(-1, 0, 0, 1, 0, 0); */
-
-
 #hColor1 {
     display: inline;
 
@@ -175,6 +163,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 #numberCount {
     position: absolute;
+    width: 100%;
     height: 21px;
     left: 50%;
     top: 381px;
@@ -188,9 +177,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 #pColor2 {
-    display: inline;
-    list-style-type: georgian;
+    display: block;
 
+    width: auto;
     height: 21px;
 
     color: #FFB431;
