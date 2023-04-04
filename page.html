@@ -13,17 +13,16 @@
     <div>
         <!--H1+IMG layout-->
         <h1>Em que número <br> <span id="hColor1">Bia</span> está pensando?</h1>
-        <img src="url(image.png)" alt="">
+        <img id="biaPhoto" src="images\blank.png">
         
-
-        <input type="number" min="1" max="100" inputmode="numeric" id="numberInput">
+        <input type="number" min="1" max="100" onsubmit="numberCount" id="numberInput">
 
         <!--Result Screen-->
         <p id="mensageResult">AAA</p>
         <button type="reset" id="buttonTryAgain">Tentar Novamente</button>
 
         <!--numberCount-->
-        <p id="numberCount">Seus palpites foram: <br> <span id="pColor2">1 2 3 4</span></p>
+        <p id="numberCount">Seus palpites: <br> <span id="pColor2"></span></p>
     </div>
 
     <script src="scripts.js"></script>
