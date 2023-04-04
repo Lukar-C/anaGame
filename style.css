@@ -34,10 +34,16 @@ div {
     background-color: #fff;
     box-shadow: 0 5px 20px #00000025;
     border-radius: 10px;
+
+    z-index: 1;
+}
+
+h1, img, p, input, button {
+    z-index: 2;
 }
 
 h1 {
-    display: initial;
+    display: block;
 
     width: 245px;
     height: 218px;
@@ -112,8 +118,9 @@ p {
     line-height: 21px;
 }
 
-input {
-    display: block;
+#numberInput {
+    display: none;
+    position: relative;
 
     width: 55px;
     height: 50px;
@@ -132,23 +139,23 @@ input {
 
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#numberInput:focus {
+    border: 2px solid #DE5540;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 #mensageResult {
-    position: relative;
-    margin-top: -22.5px;
+    margin-top: 20px;
 }
 
-button {
-
+#buttonTryAgain {
     width: 161px;
     height: 35px;
-    top: 20px;
-    margin-left: 50%;
+    margin: 8px 0 8px 50%;
     transform: translateX(-50%);
     border-radius: 5px;
 
@@ -162,19 +169,15 @@ button {
     text-align: center;
     align-items: center;
     justify-content: center;
-}
 
-#textButton {
-    color: #fff;
-
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
+    cursor: pointer;
 }
 
 #numberCount {
+    position: absolute;
     height: 21px;
-    margin: 37.5px 0 0 50%;
+    left: 50%;
+    top: 381px;
     transform: translateX(-50%);
 
     color: #000;

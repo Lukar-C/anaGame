@@ -1,12 +1,15 @@
+/* variables and constants */
 let numberRandom = Math.floor(Math.random() * 100) + 1
 let numberTry = 0
-let number = 0
+var number = document.getElementById("numberInput").value
 
-let imageDynamic = document.getElementById("biaPhoto"); imageDynamic.style.backgroundImage = "url('images/image(0).png')"
-let hiddenMensageResult = document.getElementById("mensageResult"); hiddenMensageResult.style.display = "none"
-let hiddenButtonTryAgain = document.getElementById("buttonTryAgain"); hiddenButtonTryAgain.style.display = "none"
+/* CSS CONTROLLERS */
+let controllerImage = document.getElementById("biaPhoto")
+let controllerMensageResult = document.getElementById("mensageResult")
+let controllerButtonTryAgain = document.getElementById("buttonTryAgain")
+let controllerNumberInput = document.getElementById("numberInput")
 
-const numberCount = [] 
+const numberCount = [100, 90, 80] 
 var numberList = numberCount
 
 
@@ -22,44 +25,75 @@ var numberList = numberCount
     }
         */
 
-function getNumber() {
-    document.getElementById("numberInput").addEventListener("keydown", function(e) {
-        if(e.keyCode == 13){
-            var number = document.getElementById("numberInput").value
-            document.getElementById("numberInput").value = ""
+function getNumber(num) {
+        if(event.key === 'Enter') {
+            number = num.value
+            alert(num.value)
         }
-    })
+    }
+
+function controllerReferenceThink() {
+    controllerImage.style.backgroundImage = "url('images/image(0).png')"
+    controllerMensageResult.style.display = "none"
+    controllerButtonTryAgain.style.display = "none"
+    controllerNumberInput.style.display = "block"
+}
+controllerReferenceThink()
+
+function controllerReferenceWin() {
+    controllerImage.style.backgroundImage = "url('images/image(1).png')"
+    controllerMensageResult.innerHTML = "Parabéns, o número è: <span class='mensageResult' id='pColor1'>" + numberRandom + "</span>"
+    controllerMensageResult.style.display = "block"
+    controllerButtonTryAgain.style.display = "block"
+    controllerNumberInput.style.display = "none"
+}
+
+function controllerReferenceLose() {
+    controllerImage.style.backgroundImage = "url('images/image(1).png')"
+    controllerMensageResult.innerHTML = "Você não acertou, o número era: <span class='mensageResult' id='pColor1'>" + numberRandom + "</span>"
+    controllerMensageResult.style.display = "block"
+    controllerButtonTryAgain.style.display = "block"
+    controllerNumberInput.style.display = "none"
 }
 
 function compareNumber() {
+    getNumber()
+    
     if(numberCount.includes(number)) {
         alert("O número que você digitou já foi utilizado  vez")
     }
-
+        
     else if(number < numberRandom) {
         numberCount.push(number.join('-'))
         alert("O número em que Ana está pensando é maior")
         document.getElementById("pColor2").innerHTML = numberCount.join(" - ")
     }
-
+        
     else if(number > numberRandom) {
         numberCount.push(number)
         alert("O número em que Ana está pensando é menor")
         document.getElementById("pColor2").innerHTML = numberCount.join(" - ")
     }
-
-    else {
-        document.getElementsByClassName("mensageResult").innerHTML = "Parabéns, o número é:<span class='mensageResult' id='pColor1'>" + numberRandom + "</span></p>"
-        imageDynamic.style.backgroundImage = "url('images/image(1).png')"
+        
+    else if(number == numberRandom) {
+        controllerReferenceWin()
     }
-
+    else {
+        alert(ERRO)
+    }
 }
 
-/*
-*   else {
-        document.getElementsByClassName("mensageResult").innerHTML = "Você não acertou, o número era: <span class='mensageResult' id='pColor1'>" + numberRandom + "</span>"
-        document.getElementById("biaPhoto").style.background = "url('images/image(1).png')"
-        var hiddenMensageResult = hiddenMensageResult.style.display = "block"
-        var hiddenButtonTryAgain = hiddenButtonTryAgain.style.display = "block"
+function game() {
+    controllerReferenceThink()
+
+    if(numberTry < 10) {
+        compareNumber()
     }
-*/
+    else if (numberTry == 10) {
+        controllerReferenceLose()
+    }
+    else {
+        alert("ERRO")
+    }
+}
+

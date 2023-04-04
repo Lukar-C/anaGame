@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>Ana's Game</title>
+    <title>Bia's Game</title>
 </head>
 <body>
     <div>
@@ -15,11 +15,11 @@
         <h1>Em que número <br> <span id="hColor1">Bia</span> está pensando?</h1>
         <img id="biaPhoto" src="images\blank.png">
         
-        <input type="number" min="1" max="100" onsubmit="numberCount" id="numberInput">
+        <input type="number" id="numberInput" min="1" max="100" onkeydown="getNumber(this)"/>
 
         <!--Result Screen-->
-        <p id="mensageResult">AAA</p>
-        <button type="reset" id="buttonTryAgain">Tentar Novamente</button>
+        <p id="mensageResult"></p>
+        <button id="buttonTryAgain" onclick="controllerReferenceThink()">Tentar Novamente</button>
 
         <!--numberCount-->
         <p id="numberCount">Seus palpites: <br> <span id="pColor2"></span></p>
