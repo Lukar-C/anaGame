@@ -29,19 +29,12 @@ function controllerReferenceWin() {
 }
 
 function controllerReferenceLose() {
-    controllerImage.style.backgroundImage = "url('images/image(1).png')"
+    controllerImage.style.backgroundImage = "url('images/image(2).png')"
     controllerMensageResult.innerHTML = "Você não acertou, o número era: <span class='mensageResult' id='pColor1'>" + numberRandom + "</span>"
     controllerMensageResult.style.display = "block"
     controllerButtonTryAgain.style.display = "block"
     controllerNumberInput.style.display = "none"
 }
-
-controllerButtonTryAgain.addEventListener("keypress", function(event){
-    if(event.key === "Enter") {
-        event.preventDefault()
-        document.getElementById("buttonTryAgain").click()
-    }
-})
 
 function reset() {
     number = 0
