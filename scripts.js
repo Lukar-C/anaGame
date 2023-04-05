@@ -110,13 +110,13 @@ function compareNumber() {
         
     else if(number < numberRandom) {
         numberCount.push(number)
-        alert("O número em que Ana está pensando é maior")
+        alert("O número em que Bia está pensando é maior")
         document.getElementById("pColor2").innerHTML = numberCount.join(" - ")
     }
         
     else if(number > numberRandom) {
         numberCount.push(number)
-        alert("O número em que Ana está pensando é menor")
+        alert("O número em que Bia está pensando é menor")
         document.getElementById("pColor2").innerHTML = numberCount.join(" - ")
     }
         
